@@ -1,0 +1,27 @@
+
+body{
+    font-family: sans-serif;
+    overflow-x: none;
+}
+  .nav-link:hover {
+    color: #cc5200;
+    text-decoration: underline;
+  }
+  .navbar{
+    background-color: #f3f1fa
+;
+  }
+
+  .nav-link:active {
+    transform: scale(0.95);
+    color: #7a18ca;
+  }
+  .nav-link{
+    padding: 10px;
+  }
+  .active-orange {
+    color: #ff6600 !important;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+
