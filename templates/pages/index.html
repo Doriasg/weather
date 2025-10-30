@@ -10,7 +10,11 @@
   <div class="position-relative z-1 h-100 d-flex flex-column justify-content-between p-4">
     <h2 class="fw-bold mb-4 text-center text-md-start">Météo du jour à <span>Porto-Novo</span></h2>
     <div class="div_input">
-            <input type="text" name="lieu" id="lieu" placeholder="Lieu">
+        <form action="">
+              <input type="text" name="lieu" id="lieu" placeholder="Lieu"><br>
+              <input type="text" name="date" id="date" placeholder="date">
+              <input type="submit" value="Envoyer">
+        </form>
     </div>
     <div class="row h-100 gy-4">
       <!-- Colonne gauche : propriétés météo -->
@@ -52,7 +56,7 @@
   </div>
 </div>
 
-<div class="semaine-meteo py-4">
+<div class="semaine-meteo py-4 mt-5">
   <div class="row align-items-center mb-3">
     <!-- Titre -->
     <div class="col-12 col-md-3">
@@ -68,7 +72,7 @@
             <div class="row row-cols-1 row-cols-md-3 g-3">
               <!-- Lundi -->
               <div class="col">
-                <div class="card text-center shadow-sm border-0" style="background-color: #f3f0ff;">
+                <div class="card text-center shadow-sm border-0" >
                   <div class="card-body py-3">
                     <h6 class="fw-semibold">Lundi</h6>
                     <img src="/static/img/soleil_icon.png" alt="Soleil" class="img-fluid mb-2" style="max-height: 50px;">
@@ -79,10 +83,10 @@
               </div>
               <!-- Mardi -->
               <div class="col">
-                <div class="card text-center shadow-sm border-0" style="background-color: #e8f4fc;">
+                <div class="card text-center shadow-sm border-0" >
                   <div class="card-body py-3">
                     <h6 class="fw-semibold">Mardi</h6>
-                    <img src="/static/img/nuage_icon.png" alt="Nuage" class="img-fluid mb-2" style="max-height: 50px;">
+                    <img src="/static/img/tempete_icon.png" alt="Nuage" class="img-fluid mb-2" style="max-height: 50px;">
                     <p class="mb-1 text-muted">Nuageux</p>
                     <p class="fw-bold">26 °C</p>
                   </div>
@@ -90,7 +94,7 @@
               </div>
               <!-- Mercredi -->
               <div class="col">
-                <div class="card text-center shadow-sm border-0" style="background-color: #dbeafe;">
+                <div class="card text-center shadow-sm border-0" >
                   <div class="card-body py-3">
                     <h6 class="fw-semibold">Mercredi</h6>
                     <img src="/static/img/pluie_icon.png" alt="Pluie" class="img-fluid mb-2" style="max-height: 50px;">
@@ -107,7 +111,7 @@
             <div class="row row-cols-1 row-cols-md-3 g-3">
               <!-- Jeudi -->
               <div class="col">
-                <div class="card text-center shadow-sm border-0" style="background-color: #f3f0ff;">
+                <div class="card text-center shadow-sm border-0" >
                   <div class="card-body py-3">
                     <h6 class="fw-semibold">Jeudi</h6>
                     <img src="/static/img/soleil_icon.png" alt="Soleil" class="img-fluid mb-2" style="max-height: 50px;">
@@ -118,7 +122,7 @@
               </div>
               <!-- Vendredi -->
               <div class="col">
-                <div class="card text-center shadow-sm border-0" style="background-color: #e8f4fc;">
+                <div class="card text-center shadow-sm border-0" >
                   <div class="card-body py-3">
                     <h6 class="fw-semibold">Vendredi</h6>
                     <img src="/static/img/tempete_icon.png" alt="Tempête" class="img-fluid mb-2" style="max-height: 50px;">
@@ -129,7 +133,7 @@
               </div>
               <!-- Samedi -->
               <div class="col">
-                <div class="card text-center shadow-sm border-0" style="background-color: #dbeafe;">
+                <div class="card text-center shadow-sm border-0" >
                   <div class="card-body py-3">
                     <h6 class="fw-semibold">Samedi</h6>
                     <img src="/static/img/pluie_icon.png" alt="Pluie" class="img-fluid mb-2" style="max-height: 50px;">
@@ -146,7 +150,7 @@
             <div class="row row-cols-1 row-cols-md-3 g-3">
               <!-- Dimanche -->
               <div class="col">
-                <div class="card text-center shadow-sm border-0" style="background-color: #f3f0ff;">
+                <div class="card text-center shadow-sm border-0" >
                   <div class="card-body py-3">
                     <h6 class="fw-semibold">Dimanche</h6>
                     <img src="/static/img/soleil_icon.png" alt="Soleil" class="img-fluid mb-2" style="max-height: 50px;">
@@ -157,7 +161,7 @@
               </div>
               <!-- Duplication Lundi -->
               <div class="col">
-                <div class="card text-center shadow-sm border-0" style="background-color: #f3f0ff;">
+                <div class="card text-center shadow-sm border-0" >
                   <div class="card-body py-3">
                     <h6 class="fw-semibold">Lundi</h6>
                     <img src="/static/img/soleil_icon.png" alt="Soleil" class="img-fluid mb-2" style="max-height: 50px;">
@@ -168,10 +172,10 @@
               </div>
               <!-- Duplication Mardi -->
               <div class="col">
-                <div class="card text-center shadow-sm border-0" style="background-color: #e8f4fc;">
+                <div class="card text-center shadow-sm border-0" >
                   <div class="card-body py-3">
                     <h6 class="fw-semibold">Mardi</h6>
-                    <img src="/static/img/nuage_icon.png" alt="Nuage" class="img-fluid mb-2" style="max-height: 50px;">
+                    <img src="/static/img/tempete_icon.png" alt="Nuage" class="img-fluid mb-2" style="max-height: 50px;">
                     <p class="mb-1 text-muted">Nuageux</p>
                     <p class="fw-bold">26 °C</p>
                   </div>
