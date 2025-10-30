@@ -4,7 +4,193 @@
     <link rel="stylesheet" href="{% static 'css/acceuil.css' %}">
 {% endblock  %}
 {% block content %}
-    <div class="actuel">
+<div class="actuel position-relative text-dark">
+  <div class="overlay position-absolute top-0 start-0 w-100 h-100"></div>
 
+  <div class="position-relative z-1 h-100 d-flex flex-column justify-content-between p-4">
+    <h2 class="fw-bold mb-4 text-center text-md-start">Météo du jour à <span>Porto-Novo</span></h2>
+    <div class="div_input">
+            <input type="text" name="lieu" id="lieu" placeholder="Lieu">
     </div>
+    <div class="row h-100 gy-4">
+      <!-- Colonne gauche : propriétés météo -->
+      <div class="col-12 col-md-6 d-flex flex-column justify-content-end">
+        
+        <div class="row g-3">
+          <div class="col-12">
+            <div class="card border-0 shadow-sm" style="background-color: #deccf1ff;">
+              <div class="card-body py-2 px-3">
+                <p class="mb-0"><strong>Ressentie :</strong> 30 °C</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="card border-0 shadow-sm" style="background-color: #deccf1ff;">
+              <div class="card-body py-2 px-3">
+                <p class="mb-0"><strong>Humidité :</strong> 91 %</p>
+              </div>
+            </div>
+          </div>
+          <!-- Ajoute d'autres propriétés ici -->
+        </div>
+      </div>
+
+      <!-- Colonne droite : température principale -->
+      <div class="col-12 col-md-6 d-flex justify-content-center align-items-start">
+        <div class="card text-center shadow-sm border-0 rounded-4 w-90" style="background-color: #fcf3ef; max-width: 350px;">
+          <div class="card-header fw-semibold fs-5 bg-transparent border-bottom-0 pt-3">
+            <span class="text-uppercase text-secondary">Température</span>
+          </div>
+          <div class="card-body px-4 pb-4">
+            <p class="mb-2 fs-6 text-muted">Ensoleillet</p>
+            <img src="/static/img/soleil_icon.png" alt="Soleil" class="img-fluid mb-3 sun-icon" style="max-height: 60px;"> 
+            <h1 class="display-4 fw-bold" style="color:#f27e41">27 °C</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="semaine-meteo py-4">
+  <div class="row align-items-center mb-3">
+    <!-- Titre -->
+    <div class="col-12 col-md-3">
+      <h3 class="fw-bold mb-0 text-center text-md-start">Prévisions de la semaine</h3>
+    </div>
+
+    <!-- Carousel météo -->
+    <div class="col-12 col-md-9">
+      <div id="carouselSemaine" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <!-- Slide 1 : Lundi à Mercredi -->
+          <div class="carousel-item active">
+            <div class="row row-cols-1 row-cols-md-3 g-3">
+              <!-- Lundi -->
+              <div class="col">
+                <div class="card text-center shadow-sm border-0" style="background-color: #f3f0ff;">
+                  <div class="card-body py-3">
+                    <h6 class="fw-semibold">Lundi</h6>
+                    <img src="/static/img/soleil_icon.png" alt="Soleil" class="img-fluid mb-2" style="max-height: 50px;">
+                    <p class="mb-1 text-muted">Ensoleillé</p>
+                    <p class="fw-bold">28 °C</p>
+                  </div>
+                </div>
+              </div>
+              <!-- Mardi -->
+              <div class="col">
+                <div class="card text-center shadow-sm border-0" style="background-color: #e8f4fc;">
+                  <div class="card-body py-3">
+                    <h6 class="fw-semibold">Mardi</h6>
+                    <img src="/static/img/nuage_icon.png" alt="Nuage" class="img-fluid mb-2" style="max-height: 50px;">
+                    <p class="mb-1 text-muted">Nuageux</p>
+                    <p class="fw-bold">26 °C</p>
+                  </div>
+                </div>
+              </div>
+              <!-- Mercredi -->
+              <div class="col">
+                <div class="card text-center shadow-sm border-0" style="background-color: #dbeafe;">
+                  <div class="card-body py-3">
+                    <h6 class="fw-semibold">Mercredi</h6>
+                    <img src="/static/img/pluie_icon.png" alt="Pluie" class="img-fluid mb-2" style="max-height: 50px;">
+                    <p class="mb-1 text-muted">Pluvieux</p>
+                    <p class="fw-bold">24 °C</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 : Jeudi à Samedi -->
+          <div class="carousel-item">
+            <div class="row row-cols-1 row-cols-md-3 g-3">
+              <!-- Jeudi -->
+              <div class="col">
+                <div class="card text-center shadow-sm border-0" style="background-color: #f3f0ff;">
+                  <div class="card-body py-3">
+                    <h6 class="fw-semibold">Jeudi</h6>
+                    <img src="/static/img/soleil_icon.png" alt="Soleil" class="img-fluid mb-2" style="max-height: 50px;">
+                    <p class="mb-1 text-muted">Ensoleillé</p>
+                    <p class="fw-bold">29 °C</p>
+                  </div>
+                </div>
+              </div>
+              <!-- Vendredi -->
+              <div class="col">
+                <div class="card text-center shadow-sm border-0" style="background-color: #e8f4fc;">
+                  <div class="card-body py-3">
+                    <h6 class="fw-semibold">Vendredi</h6>
+                    <img src="/static/img/tempete_icon.png" alt="Tempête" class="img-fluid mb-2" style="max-height: 50px;">
+                    <p class="mb-1 text-muted">Orage</p>
+                    <p class="fw-bold">23 °C</p>
+                  </div>
+                </div>
+              </div>
+              <!-- Samedi -->
+              <div class="col">
+                <div class="card text-center shadow-sm border-0" style="background-color: #dbeafe;">
+                  <div class="card-body py-3">
+                    <h6 class="fw-semibold">Samedi</h6>
+                    <img src="/static/img/pluie_icon.png" alt="Pluie" class="img-fluid mb-2" style="max-height: 50px;">
+                    <p class="mb-1 text-muted">Pluvieux</p>
+                    <p class="fw-bold">25 °C</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 : Dimanche + 2 duplications pour garder 3 cartes -->
+          <div class="carousel-item">
+            <div class="row row-cols-1 row-cols-md-3 g-3">
+              <!-- Dimanche -->
+              <div class="col">
+                <div class="card text-center shadow-sm border-0" style="background-color: #f3f0ff;">
+                  <div class="card-body py-3">
+                    <h6 class="fw-semibold">Dimanche</h6>
+                    <img src="/static/img/soleil_icon.png" alt="Soleil" class="img-fluid mb-2" style="max-height: 50px;">
+                    <p class="mb-1 text-muted">Ensoleillé</p>
+                    <p class="fw-bold">30 °C</p>
+                  </div>
+                </div>
+              </div>
+              <!-- Duplication Lundi -->
+              <div class="col">
+                <div class="card text-center shadow-sm border-0" style="background-color: #f3f0ff;">
+                  <div class="card-body py-3">
+                    <h6 class="fw-semibold">Lundi</h6>
+                    <img src="/static/img/soleil_icon.png" alt="Soleil" class="img-fluid mb-2" style="max-height: 50px;">
+                    <p class="mb-1 text-muted">Ensoleillé</p>
+                    <p class="fw-bold">28 °C</p>
+                  </div>
+                </div>
+              </div>
+              <!-- Duplication Mardi -->
+              <div class="col">
+                <div class="card text-center shadow-sm border-0" style="background-color: #e8f4fc;">
+                  <div class="card-body py-3">
+                    <h6 class="fw-semibold">Mardi</h6>
+                    <img src="/static/img/nuage_icon.png" alt="Nuage" class="img-fluid mb-2" style="max-height: 50px;">
+                    <p class="mb-1 text-muted">Nuageux</p>
+                    <p class="fw-bold">26 °C</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contrôles -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselSemaine" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselSemaine" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
 {% endblock  %}
