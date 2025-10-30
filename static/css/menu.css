@@ -2,6 +2,7 @@
 body{
     font-family: sans-serif;
     overflow-x: none;
+    background-color: #EFF3F9;
 }
   .nav-link:hover {
     color: #cc5200;
