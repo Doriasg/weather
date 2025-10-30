@@ -4,51 +4,59 @@
     <link rel="stylesheet" href="{% static 'css/acceuil.css' %}">
 {% endblock  %}
 {% block content %}
-<div class="actuel position-relative text-dark">
+<div class="actuel text-dark">
   <div class="overlay position-absolute top-0 start-0 w-100 h-100"></div>
 
-  <div class="position-relative z-1 h-100 d-flex flex-column justify-content-between p-4">
-    <h2 class="fw-bold mb-4 text-center text-md-start">Météo du jour à <span>Porto-Novo</span></h2>
-    <div class="div_input">
-        <form action="">
-              <input type="text" name="lieu" id="lieu" placeholder="Lieu"><br>
-              <input type="text" name="date" id="date" placeholder="date">
-              <input type="submit" value="Envoyer">
+  <div class="position-relative z-1 h-100 d-flex flex-column flex-md-row justify-content-between align-items-stretch p-4">
+    
+    <!-- Formulaire à gauche -->
+    <div class="div_input flex-fill me-md-4 mb-4 mb-md-0 ps-md-5 ps-0">
+        <h2 class="fw-bold mb-4 text-center text-md-start">Météo du jour à <span>Porto-Novo</span></h2>
+        <form action="" class="form-meteo p-4 rounded-4 shadow-sm " style="background-color: rgba(253, 248, 244, 0.9)">
+            <div class="mb-3">
+                <label for="lieu" class="form-label fw-semibold">Lieu</label>
+                <input type="text" name="lieu" id="lieu" class="form-control" placeholder="Entrez un lieu">
+            </div>
+            <div class="mb-3">
+                <label for="date" class="form-label fw-semibold">Date</label>
+                <input type="date" name="date" id="date" class="form-control">
+            </div>
+            <input type="submit" value="Envoyer" class="btn  fw-semibold" style="background-color: #d1d3ec;">
         </form>
     </div>
-    <div class="row h-100 gy-4">
-      <!-- Colonne gauche : propriétés météo -->
-      <div class="col-12 col-md-6 d-flex flex-column justify-content-end">
-        
-        <div class="row g-3">
-          <div class="col-12">
-            <div class="card border-0 shadow-sm" style="background-color: #deccf1ff;">
-              <div class="card-body py-2 px-3">
-                <p class="mb-0"><strong>Ressentie :</strong> 30 °C</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-12">
-            <div class="card border-0 shadow-sm" style="background-color: #deccf1ff;">
-              <div class="card-body py-2 px-3">
-                <p class="mb-0"><strong>Humidité :</strong> 91 %</p>
-              </div>
-            </div>
-          </div>
-          <!-- Ajoute d'autres propriétés ici -->
-        </div>
-      </div>
 
-      <!-- Colonne droite : température principale -->
-      <div class="col-12 col-md-6 d-flex justify-content-center align-items-start">
-        <div class="card text-center shadow-sm border-0 rounded-4 w-90" style="background-color: #fcf3ef; max-width: 350px;">
-          <div class="card-header fw-semibold fs-5 bg-transparent border-bottom-0 pt-3">
-            <span class="text-uppercase text-secondary">Température</span>
-          </div>
-          <div class="card-body px-4 pb-4">
-            <p class="mb-2 fs-6 text-muted">Ensoleillet</p>
-            <img src="/static/img/soleil_icon.png" alt="Soleil" class="img-fluid mb-3 sun-icon" style="max-height: 60px;"> 
-            <h1 class="display-4 fw-bold" style="color:#f27e41">27 °C</h1>
+
+    <!-- Bloc météo à droite -->
+    <div class="row h-100 gy-4 flex-fill d-flex flex-column justify-content-center align-items-center">
+      <div class="col-12 col-md-8 d-flex flex-column justify-content-center align-items-center">
+        <div class="card border-0 w-100 px-3 py-4" style="background-color: rgba(253, 249, 244, 0.6); border-radius: 16px; max-width: 420px;">
+          <h5 class="fw-semibold mb-4 text-center ">Détails météo</h5>
+          <div class="row row-cols-2 g-3">
+            <!-- Température -->
+            <div class="col">
+              <div class="card-meteo text-center p-3"style="background-color: #ffffffff; border-radius: 12px;">
+                <h6 class="fw-bold mb-1">Température</h6>
+                <img src="/static/img/soleil_icon.png" alt="Température" class="img-fluid my-2" style="max-height: 40px;">
+                <p class="fw-bold text-orange">27 °C</p>
+              </div>
+            </div>
+            <!-- Ressentie -->
+            <div class="col">
+              <div class="card-meteo text-center p-3"style="background-color: #ffffffff; border-radius: 12px;">
+                <h6 class="fw-bold mb-1">Ressentie</h6>
+                <img src="/static/img/thermometre_icon.png" alt="Ressentie" class="img-fluid my-2" style="max-height: 40px;">
+                <p class="fw-bold text-orange">30 °C</p>
+              </div>
+            </div>
+            <!-- Humidité -->
+            <div class="col">
+              <div class="card-meteo text-center p-3" style="background-color: #ffffffff; border-radius: 12px;">
+                <h6 class="fw-bold mb-1">Humidité</h6>
+                <img src="/static/img/humidite_icon.png" alt="Humidité" class="img-fluid my-2" style="max-height: 40px;">
+                <p class="fw-bold text-orange">91 %</p>
+              </div>
+            </div>
+            <!-- Ajoute d'autres propriétés ici -->
           </div>
         </div>
       </div>
@@ -56,8 +64,8 @@
   </div>
 </div>
 
-<div class="semaine-meteo py-4 mt-5">
-  <div class="row align-items-center mb-3">
+<div class="semaine-meteo py-4 mt-5 container">
+  <div class="row align-items-center mb-3 ">
     <!-- Titre -->
     <div class="col-12 col-md-3">
       <h3 class="fw-bold mb-0 text-center text-md-start">Prévisions de la semaine</h3>
